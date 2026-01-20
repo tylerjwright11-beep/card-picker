@@ -3,7 +3,7 @@ const categories = {
     title: "Restaurants",
     primary: {
       name: "Chase Sapphire Preferred",
-      reward: "3X Points ⭐️",
+      reward: "3× points 🍽️",
       image: "images/chase-sapphire-preferred.png",
       applePay: false
     }
@@ -12,7 +12,7 @@ const categories = {
     title: "Grocery Stores",
     primary: {
       name: "AAA Daily Advantage",
-      reward: "5% Cash Back 💰",
+      reward: "5% cash back 🛒",
       image: "images/aaa-daily-advantage.png",
       applePay: false
     }
@@ -21,7 +21,7 @@ const categories = {
     title: "Wholesale Clubs",
     primary: {
       name: "AAA Daily Advantage",
-      reward: "3% Cash Back 💰",
+      reward: "3% cash back 🏷️",
       image: "images/aaa-daily-advantage.png",
       applePay: false
     }
@@ -30,7 +30,7 @@ const categories = {
     title: "Gas",
     primary: {
       name: "Citi Custom Cash",
-      reward: "5% Cash Back 💰",
+      reward: "5% cash back ⛽️",
       image: "images/citi-custom-cash.png",
       applePay: false
     }
@@ -39,8 +39,8 @@ const categories = {
     title: "Online Shopping",
     primary: {
       name: "Bank of America Cash Rewards",
-      reward: "3% Cash Back 💰",
-      image: "images/boa-cash-rewards.png",
+      reward: "3% cash back 💻",
+      image: "images/bofa-cash-rewards.png",
       applePay: false
     }
   },
@@ -48,27 +48,32 @@ const categories = {
     title: "Everything Else",
     primary: {
       name: "US Bank Altitude Reserve",
-      reward: "2.4% ⭐️",
+      reward: "2.4% via Apple Pay ✨",
       image: "images/us-bank-altitude-reserve.png",
       applePay: true
     },
     backup: {
       name: "Citi Double Cash",
-      reward: "2% Cash Back 💰",
+      reward: "2% cash back 🔁",
       image: "images/citi-double-cash.png"
     }
   }
 };
 
+const homeHeader = document.getElementById("homeHeader");
 const categoryView = document.getElementById("categoryView");
 const resultView = document.getElementById("resultView");
 
 const categoryTitle = document.getElementById("categoryTitle");
+
+const primaryLabel = document.getElementById("primaryLabel");
+const primaryCardName = document.getElementById("primaryCardName");
 const primaryCardImage = document.getElementById("primaryCardImage");
 const primaryReward = document.getElementById("primaryReward");
 const applePayBadge = document.getElementById("applePayBadge");
 
 const backupSection = document.getElementById("backupSection");
+const backupCardName = document.getElementById("backupCardName");
 const backupCardImage = document.getElementById("backupCardImage");
 const backupReward = document.getElementById("backupReward");
 
@@ -80,27 +85,32 @@ document.querySelectorAll("[data-category]").forEach(button => {
 
     categoryTitle.textContent = data.title;
 
+    primaryCardName.textContent = data.primary.name;
     primaryCardImage.src = data.primary.image;
-    primaryReward.textContent = `${data.primary.name} — ${data.primary.reward}`;
+    primaryReward.textContent = data.primary.reward;
 
     applePayBadge.classList.toggle("hidden", !data.primary.applePay);
 
     if (data.backup) {
+      primaryLabel.classList.remove("hidden");
+
       backupSection.classList.remove("hidden");
+      backupCardName.textContent = data.backup.name;
       backupCardImage.src = data.backup.image;
-      backupReward.textContent = `${data.backup.name} — ${data.backup.reward}`;
+      backupReward.textContent = data.backup.reward;
     } else {
+      primaryLabel.classList.add("hidden");
       backupSection.classList.add("hidden");
     }
 
+    homeHeader.classList.add("hidden");
     categoryView.classList.add("hidden");
     resultView.classList.remove("hidden");
   });
 });
 
 document.getElementById("backButton").addEventListener("click", () => {
+  homeHeader.classList.remove("hidden");
   categoryView.classList.remove("hidden");
   resultView.classList.add("hidden");
 });
-
-
