@@ -18,7 +18,7 @@ body {
 
 /* HOME HEADER */
 #homeHeader {
-  text-align: left; /* left-aligned header */
+  text-align: left; /* left-align header */
   margin-bottom: 20px;
 }
 
@@ -33,12 +33,13 @@ body {
   color: #555;
 }
 
-/* CATEGORY BUTTONS */
+/* CATEGORY GRID */
 .category-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* two columns */
   gap: 14px;
   margin-top: 10px;
+  width: 100%;
 }
 
 .category-grid button {
@@ -53,6 +54,8 @@ body {
   cursor: pointer;
   text-align: center;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
+
+  width: 100%; /* make buttons take full column width */
 }
 
 .category-grid button:active {
@@ -79,7 +82,7 @@ body {
   font-size: 18px;
   color: #666;
   margin-bottom: 20px;
-  text-align: left; /* left-align page title */
+  text-align: left;
 }
 
 /* CARD DISPLAY */
@@ -106,22 +109,4 @@ body {
 .card-image {
   width: 240px;
   max-width: 90%;
-  margin: 0 auto 12px;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-}
-
-/* REWARD */
-.reward {
-  font-size: 18px;
-  font-weight: 600;
-}
-
-/* SUBTLE DIVIDER */
-.divider {
-  width: 60%;
-  height: 1px;
-  background: rgba(0,0,0,0.1);
-  margin: 26px auto;
-}
+  m
