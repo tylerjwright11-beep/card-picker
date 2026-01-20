@@ -40,7 +40,7 @@ const categories = {
     primary: {
       name: "Bank of America Cash Rewards",
       reward: "3% cash back 💻",
-      image: "images/bofa-cash-rewards.png",
+      image: "images/boa-cash-rewards.png",
       applePay: false
     }
   },
@@ -114,3 +114,4 @@ document.getElementById("backButton").addEventListener("click", () => {
   categoryView.classList.remove("hidden");
   resultView.classList.add("hidden");
 });
+
