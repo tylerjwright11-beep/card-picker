@@ -12,7 +12,7 @@ body {
   color: #1c1c1e;
 }
 
-/* Header */
+/* Home Header */
 header {
   padding: 24px 20px 10px;
 }
@@ -59,7 +59,6 @@ button:active {
   background: #f2f2f7;
 }
 
-/* Visibility */
 .hidden {
   display: none;
 }
@@ -70,32 +69,29 @@ button:active {
   color: #007aff;
   font-size: 17px;
   padding: 0;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   box-shadow: none;
 }
 
-/* Titles */
-h2 {
-  font-size: 22px;
-  margin-bottom: 20px;
+/* Page title (category name) */
+.page-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #6e6e73;
+  margin-bottom: 24px;
 }
 
-/* Card sections */
+/* Card Section */
 .card-section {
-  text-align: center; /* Center card content */
+  text-align: center;
+  margin-bottom: 28px;
 }
 
-h3 {
-  font-size: 18px;
-  margin-top: 25px;
-  margin-bottom: 12px;
-}
-
-/* Card name */
+/* Card name (larger, emphasized) */
 .card-name {
+  font-size: 20px;
   font-weight: 600;
-  font-size: 17px;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
 }
 
 /* Card image */
@@ -109,7 +105,7 @@ h3 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Rewards */
+/* Reward text */
 .reward {
   font-size: 16px;
   color: #1c1c1e;
@@ -118,7 +114,7 @@ h3 {
 /* Apple Pay badge */
 #applePayBadge {
   width: 90px;
-  margin: 8px auto 0;
+  margin: 6px auto 12px;
   opacity: 0.85;
   display: block;
 }
