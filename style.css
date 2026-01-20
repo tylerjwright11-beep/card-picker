@@ -1,4 +1,3 @@
-/* Base Reset */
 * {
   box-sizing: border-box;
   -webkit-user-select: none;
@@ -7,7 +6,8 @@
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    Helvetica, Arial, sans-serif;
   background: #f9f9fb; /* Softer background */
   color: #1c1c1e;
 }
@@ -28,20 +28,26 @@ h1 {
   color: #6e6e73;
 }
 
-/* Category View */
+/* Layout */
 main {
   padding: 20px;
 }
 
+/* Two-column category grid */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Buttons */
 button {
-  width: 100%;
   padding: 16px;
-  margin-bottom: 12px;
-  font-size: 17px;
+  font-size: 16px;
   border-radius: 12px;
   border: none;
   background: #ffffff;
-  color: #1c1c1e;
+  color: #007aff; /* Blue text */
   cursor: pointer;
 
   /* Micro elevation */
@@ -50,15 +56,16 @@ button {
 }
 
 button:active {
-  transform: scale(0.98);
+  transform: scale(0.97);
   background: #f2f2f7;
 }
 
-/* Result View */
+/* Visibility helpers */
 .hidden {
   display: none;
 }
 
+/* Back button */
 #backButton {
   background: none;
   color: #007aff;
@@ -80,11 +87,7 @@ h3 {
   margin-bottom: 12px;
 }
 
-/* Card Sections */
-.card-section {
-  margin-top: 10px;
-}
-
+/* Card sections */
 .card-section img {
   width: 100%;
   max-width: 320px;
@@ -96,7 +99,7 @@ h3 {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Rewards emphasis */
+/* Reward emphasis */
 #primaryReward,
 #backupReward {
   font-size: 16px;
@@ -108,11 +111,4 @@ h3 {
   width: 90px;
   margin-top: 6px;
   opacity: 0.85;
-}
-
-/* Reduce motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
-  }
 }
