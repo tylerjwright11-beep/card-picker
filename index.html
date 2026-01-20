@@ -2,13 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  />
   <title>Which Card?</title>
 
-  <!-- App Icon -->
-  <link rel="apple-touch-icon" href="images/app-icon.png" />
+  <!-- App Icons (your existing files) -->
+  <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192.png" />
+  <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512.png" />
 
-  <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,7 +21,7 @@
     <p class="subtitle">Tap a category</p>
   </header>
 
-  <main id="categoryView">
+  <main id="categoryView" class="grid">
     <button data-category="restaurants">Restaurants</button>
     <button data-category="grocery">Grocery Stores</button>
     <button data-category="wholesale">Wholesale Clubs</button>
@@ -36,10 +39,17 @@
       <h3>Primary Card</h3>
       <img id="primaryCardImage" alt="Primary Card" />
       <p id="primaryReward"></p>
-      <img id="applePayBadge" class="hidden" alt="Apple Pay" src="images/apple-pay.png" />
+
+      <!-- Apple Pay badge (your existing file) -->
+      <img
+        id="applePayBadge"
+        class="hidden"
+        alt="Apple Pay"
+        src="images/apple-pay-badge.png"
+      />
     </section>
 
-    <section class="card-section" id="backupSection">
+    <section class="card-section hidden" id="backupSection">
       <h3>Backup Card</h3>
       <img id="backupCardImage" alt="Backup Card" />
       <p id="backupReward"></p>
@@ -48,4 +58,4 @@
 
   <script src="app.js"></script>
 </body>
-</html>
+</html
