@@ -32,31 +32,25 @@
   </main>
 
   <!-- Result View -->
-  <main id="resultView" class="hidden">
+  <section id="resultView" class="hidden">
     <button id="backButton">← Back</button>
 
     <h2 id="categoryTitle" class="page-title"></h2>
 
-    <section class="card-section">
-      <p id="primaryCardName" class="card-name"></p>
+    <div class="card-display" id="primaryCard">
+      <div class="card-name" id="primaryCardName"></div>
+      <!-- Apple Pay badge will be injected dynamically -->
+      <img id="primaryCardImage" class="card-image" alt="Card Image" />
+      <div class="reward" id="primaryReward"></div>
+    </div>
 
-      <img
-        id="applePayBadge"
-        class="hidden"
-        alt="Apple Pay"
-        src="images/apple-pay-badge.png"
-      />
-
-      <img id="primaryCardImage" alt="Primary Card" />
-      <p id="primaryReward" class="reward"></p>
-    </section>
-
-    <section class="card-section hidden" id="backupSection">
-      <p id="backupCardName" class="card-name"></p>
-      <img id="backupCardImage" alt="Backup Card" />
-      <p id="backupReward" class="reward"></p>
-    </section>
-  </main>
+    <!-- BACKUP CARD -->
+    <div id="backupSection" class="card-display hidden">
+      <div class="card-name" id="backupCardName"></div>
+      <img id="backupCardImage" class="card-image" alt="Backup Card Image" />
+      <div class="reward" id="backupReward"></div>
+    </div>
+  </section>
 
   <script src="app.js"></script>
 </body>
