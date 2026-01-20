@@ -3,11 +3,13 @@ body {
   background: #ffffff;
   margin: 0;
   padding: 20px;
+  color: #000;
 }
 
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 28px;
 }
 
 .grid {
@@ -19,17 +21,14 @@ h1 {
 button {
   padding: 18px;
   font-size: 16px;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   background: #f2f2f7;
+  font-weight: 500;
 }
 
 button:active {
   background: #e5e5ea;
-}
-
-.hidden {
-  display: none;
 }
 
 #back {
@@ -37,6 +36,11 @@ button:active {
   background: none;
   color: #007aff;
   font-size: 16px;
+  padding: 0;
+}
+
+.hidden {
+  display: none;
 }
 
 .card-section {
@@ -47,11 +51,23 @@ button:active {
 .card-section img {
   width: 90%;
   max-width: 320px;
-  border-radius: 14px;
+  border-radius: 16px;
   margin: 10px 0;
 }
 
-/* Animations */
+#primaryReward,
+#backupReward {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 6px;
+}
+
+#applePayBadge {
+  width: 120px;
+  margin-top: 8px;
+}
+
+/* Subtle animation */
 .fade-in {
   animation: fadeIn 0.2s ease-out;
 }
@@ -66,5 +82,3 @@ button:active {
     transform: scale(1);
   }
 }
-
-
