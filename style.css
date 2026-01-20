@@ -1,53 +1,58 @@
 * {
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  padding: 20px;
   background: #f5f7fa;
   color: #111;
+  padding: 20px;
 }
 
+/* HIDDEN CLASS */
 .hidden {
   display: none;
 }
 
 /* HOME HEADER */
 #homeHeader {
-  text-align: left; /* align left instead of center */
-  margin-bottom: 24px;
+  text-align: left; /* left-aligned header */
+  margin-bottom: 20px;
 }
 
 #homeHeader h1 {
   font-size: 28px;
-  margin: 0;
+  font-weight: 700;
+  margin-bottom: 4px;
 }
 
 #homeHeader p {
+  font-size: 16px;
   color: #555;
-  margin-top: 6px;
 }
 
-/* CATEGORY GRID */
+/* CATEGORY BUTTONS */
 .category-grid {
   display: grid;
-  grid-template-columns: 1fr, 1fr;
-  gap: 15px;
+  grid-template-columns: repeat(2, 1fr); /* two columns */
+  gap: 14px;
+  margin-top: 10px;
 }
 
 .category-grid button {
-  padding: 18px;
+  padding: 16px;
   font-size: 16px;
   background: #ffffff;
-  border-radius: 12px;
+  border-radius: 14px;
   border: none;
   color: #1a73e8; /* blue text */
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  cursor: pointer;
+  text-align: center;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
-  text-align: center; /* ensure button text stays centered */
 }
 
 .category-grid button:active {
@@ -66,14 +71,15 @@ body {
   color: #1a73e8;
   font-size: 16px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 /* PAGE TITLE */
 .page-title {
   font-size: 18px;
   color: #666;
-  margin: 4px 0 20px;
-  text-align: left; /* left-align category titles */
+  margin-bottom: 20px;
+  text-align: left; /* left-align page title */
 }
 
 /* CARD DISPLAY */
@@ -119,4 +125,3 @@ body {
   background: rgba(0,0,0,0.1);
   margin: 26px auto;
 }
-
