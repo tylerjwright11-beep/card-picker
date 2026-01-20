@@ -3,7 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Which Card?</title>
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Which Card">
+
   <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -18,13 +24,23 @@
 
       <div class="card-section">
         <h2 id="primaryTitle"></h2>
-        <img id="primaryImage" />
+
+        <img id="primaryImage" alt="Primary Card" />
+
         <p id="primaryReward"></p>
+
+        <!-- Apple Pay badge (shown only for Altitude Reserve) -->
+        <img
+          id="applePayBadge"
+          class="hidden"
+          src="images/apple-pay-badge.png"
+          alt="Apple Pay"
+        />
       </div>
 
       <div id="backupSection" class="card-section hidden">
         <h3>Backup Card</h3>
-        <img id="backupImage" />
+        <img id="backupImage" alt="Backup Card" />
         <p id="backupReward"></p>
       </div>
     </div>
@@ -33,11 +49,11 @@
   <script src="app.js"></script>
 
   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker.register("service-worker.js");
-  }
-</script>
-
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </body>
 </html>
+
 
