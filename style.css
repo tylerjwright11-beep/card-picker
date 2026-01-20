@@ -36,7 +36,7 @@ body {
 /* CATEGORY GRID - Home Page Buttons */
 .category-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* two equal columns */
+  grid-template-columns: repeat(2, 1fr); /* two equal columns */
   gap: 14px;
   width: 100%;
 }
@@ -106,7 +106,7 @@ body {
 /* CARD IMAGE */
 .card-image {
   width: 100%;
-  max-width: 320px; /* restored to your requested size */
+  max-width: 320px; /* restored size */
   margin: 0 auto 12px;
   display: block;
   border-radius: 12px;
