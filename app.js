@@ -43,7 +43,7 @@ const data = {
   "Everything Else": {
     primary: {
       name: "US Bank Altitude Reserve",
-      reward: "2.4% 🍎💳",
+      reward: "2.4% 💰",
       image: "images/us-bank-altitude-reserve.png",
       applePay: true
     },
@@ -114,5 +114,6 @@ backBtn.onclick = () => {
   resultDiv.classList.add("hidden");
   categoriesDiv.classList.remove("hidden");
 };
+
 
 
