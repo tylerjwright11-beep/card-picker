@@ -2,27 +2,28 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Which Card?</title>
 
-  <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192.png" />
-  <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512.png" />
+  <!-- App icons -->
+  <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192.png">
+  <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512.png">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Which Card">
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Home Header -->
+  <!-- HOME HEADER -->
   <header id="homeHeader">
     <h1>Which Card?</h1>
-    <p class="subtitle">Tap a category</p>
+    <p>Tap a category</p>
   </header>
 
-  <!-- Category Grid -->
-  <main id="categoryView" class="grid">
+  <!-- CATEGORY BUTTONS -->
+  <main id="categoryView" class="category-grid">
     <button data-category="restaurants">Restaurants</button>
     <button data-category="grocery">Grocery Stores</button>
     <button data-category="wholesale">Wholesale Clubs</button>
@@ -31,7 +32,7 @@
     <button data-category="everything">Everything Else</button>
   </main>
 
-  <!-- Result View -->
+  <!-- RESULT VIEW -->
   <section id="resultView" class="hidden">
     <button id="backButton">← Back</button>
 
@@ -39,10 +40,13 @@
 
     <div class="card-display" id="primaryCard">
       <div class="card-name" id="primaryCardName"></div>
-      <!-- Apple Pay badge will be injected dynamically -->
+      <!-- Apple Pay badge dynamically injected here -->
       <img id="primaryCardImage" class="card-image" alt="Card Image" />
       <div class="reward" id="primaryReward"></div>
     </div>
+
+    <!-- SUBTLE DIVIDER -->
+    <div class="divider hidden" id="divider"></div>
 
     <!-- BACKUP CARD -->
     <div id="backupSection" class="card-display hidden">
