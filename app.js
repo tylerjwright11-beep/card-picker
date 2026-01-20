@@ -72,7 +72,7 @@ const backupSection = document.getElementById("backupSection");
 const backupCardImage = document.getElementById("backupCardImage");
 const backupReward = document.getElementById("backupReward");
 
-document.querySelectorAll("button[data-category]").forEach(button => {
+document.querySelectorAll("[data-category]").forEach(button => {
   button.addEventListener("click", () => {
     if (navigator.vibrate) navigator.vibrate(10);
 
