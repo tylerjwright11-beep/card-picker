@@ -1,3 +1,9 @@
+function hapticTap() {
+  if (navigator.vibrate) {
+    navigator.vibrate(10);
+  }
+}
+
 const data = {
   "Restaurants": {
     primary: {
@@ -55,7 +61,10 @@ const backBtn = document.getElementById("back");
 for (const category in data) {
   const btn = document.createElement("button");
   btn.textContent = category;
-  btn.onclick = () => showResult(category);
+  btn.onclick = () => {
+  hapticTap();
+  showResult(category);
+  };
   categoriesDiv.appendChild(btn);
 }
 
@@ -79,6 +88,8 @@ function showResult(category) {
 }
 
 backBtn.onclick = () => {
+  hapticTap();
   resultDiv.classList.add("hidden");
   categoriesDiv.classList.remove("hidden");
 };
+
