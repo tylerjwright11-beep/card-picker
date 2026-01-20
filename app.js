@@ -70,6 +70,8 @@ const primaryCardName = document.getElementById("primaryCardName");
 const primaryCardImage = document.getElementById("primaryCardImage");
 const primaryReward = document.getElementById("primaryReward");
 
+const divider = document.getElementById("divider");
+
 const backupSection = document.getElementById("backupSection");
 const backupCardName = document.getElementById("backupCardName");
 const backupCardImage = document.getElementById("backupCardImage");
@@ -105,23 +107,14 @@ document.querySelectorAll("[data-category]").forEach(button => {
     // Backup card
     if (data.backup) {
       backupSection.classList.remove("hidden");
-
-      // Insert divider if not present
-      if (!document.querySelector(".divider")) {
-        const divider = document.createElement("div");
-        divider.className = "divider";
-        primaryCard.after(divider);
-      }
+      divider.classList.remove("hidden");
 
       backupCardName.textContent = data.backup.name;
       backupCardImage.src = data.backup.image;
       backupReward.textContent = data.backup.reward;
     } else {
       backupSection.classList.add("hidden");
-
-      // Remove divider if exists
-      const divider = document.querySelector(".divider");
-      if (divider) divider.remove();
+      divider.classList.add("hidden");
     }
 
     homeHeader.classList.add("hidden");
@@ -139,7 +132,5 @@ document.getElementById("backButton").addEventListener("click", () => {
   const existingBadge = document.getElementById("dynamicApplePay");
   if (existingBadge) existingBadge.remove();
 
-  // Remove divider on back
-  const divider = document.querySelector(".divider");
-  if (divider) divider.remove();
+  divider.classList.add("hidden");
 });
