@@ -87,12 +87,12 @@ function showResult(category) {
   const info = data[category];
 
   primaryTitle.textContent = info.primary.name;
-  primaryImage.src = info.primary.image;
   if (info.primary.applePay) {
     applePayBadge.classList.remove("hidden");
   } else {
     applePayBadge.classList.add("hidden");
   }
+  primaryImage.src = info.primary.image;
   primaryReward.textContent = info.primary.reward;
 
   
@@ -115,6 +115,7 @@ backBtn.onclick = () => {
   resultDiv.classList.add("hidden");
   categoriesDiv.classList.remove("hidden");
 };
+
 
 
 
