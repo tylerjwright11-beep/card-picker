@@ -18,7 +18,7 @@ body {
 
 /* HOME HEADER */
 #homeHeader {
-  text-align: left; /* left-align header */
+  text-align: left; /* left-aligned header */
   margin-bottom: 20px;
 }
 
@@ -36,7 +36,7 @@ body {
 /* CATEGORY GRID - Home Page Buttons */
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* enforce two columns */
+  grid-template-columns: 1fr 1fr; /* two equal columns */
   gap: 14px;
   width: 100%;
 }
@@ -53,7 +53,7 @@ body {
   cursor: pointer;
   text-align: center;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
-  width: 100%; /* ensure full column width */
+  width: 100%; /* full width per column */
 }
 
 .category-grid button:active {
@@ -106,7 +106,7 @@ body {
 /* CARD IMAGE */
 .card-image {
   width: 100%;
-  max-width: 320px; /* adjusted per your request */
+  max-width: 320px; /* restored to your requested size */
   margin: 0 auto 12px;
   display: block;
   border-radius: 12px;
