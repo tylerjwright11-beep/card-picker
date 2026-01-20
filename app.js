@@ -61,7 +61,7 @@ const categories = {
 };
 
 const homeHeader = document.getElementById("homeHeader");
-const categoryView = document.getElementById("categoryView");
+const categoryContainer = document.getElementById("categoryContainer");
 const resultView = document.getElementById("resultView");
 
 const categoryTitle = document.getElementById("categoryTitle");
@@ -118,7 +118,7 @@ document.querySelectorAll("[data-category]").forEach(button => {
 
     // HIDE HOME, SHOW RESULT
     homeHeader.classList.add("hidden");
-    categoryView.classList.add("hidden");
+    categoryContainer.classList.add("hidden"); // <--- hide buttons
     resultView.classList.remove("hidden");
   });
 });
@@ -126,10 +126,9 @@ document.querySelectorAll("[data-category]").forEach(button => {
 // BACK BUTTON HANDLER
 document.getElementById("backButton").addEventListener("click", () => {
   homeHeader.classList.remove("hidden");
-  categoryView.classList.remove("hidden");
+  categoryContainer.classList.remove("hidden"); // <--- show buttons
   resultView.classList.add("hidden");
 
-  // Remove Apple Pay badge
   const existingBadge = document.getElementById("dynamicApplePay");
   if (existingBadge) existingBadge.remove();
 
