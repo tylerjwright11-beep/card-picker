@@ -1,108 +1,116 @@
-const categories = {
-  restaurants: {
-    title: "Restaurants",
+function hapticTap() {
+  if (navigator.vibrate) {
+    navigator.vibrate(10);
+  }
+}
+
+const data = {
+  "Restaurants": {
     primary: {
       name: "Chase Sapphire Preferred",
-      reward: "3× points 🍽️",
-      image: "images/chase-sapphire-preferred.png",
-      applePay: false
+      reward: "3X ⭐️",
+      image: "images/chase-sapphire-preferred.png"
     }
   },
-  grocery: {
-    title: "Grocery Stores",
+  "Grocery Stores": {
     primary: {
       name: "AAA Daily Advantage",
-      reward: "5% cash back 🛒",
-      image: "images/aaa-daily-advantage.png",
-      applePay: false
+      reward: "5% 💰",
+      image: "images/aaa-daily-advantage.png"
     }
   },
-  wholesale: {
-    title: "Wholesale Clubs",
+  "Wholesale Clubs": {
     primary: {
       name: "AAA Daily Advantage",
-      reward: "3% cash back 🏷️",
-      image: "images/aaa-daily-advantage.png",
-      applePay: false
+      reward: "3% 💰",
+      image: "images/aaa-daily-advantage.png"
     }
   },
-  gas: {
-    title: "Gas",
+  "Gas": {
     primary: {
       name: "Citi Custom Cash",
-      reward: "5% cash back ⛽️",
-      image: "images/citi-custom-cash.png",
-      applePay: false
+      reward: "5% 💰",
+      image: "images/citi-custom-cash.png"
     }
   },
-  online: {
-    title: "Online Shopping",
+  "Online Shopping": {
     primary: {
       name: "Bank of America Cash Rewards",
-      reward: "3% cash back 💻",
-      image: "images/bofa-cash-rewards.png",
-      applePay: false
+      reward: "3% 💰",
+      image: "images/boa-cash-rewards.png"
     }
   },
-  everything: {
-    title: "Everything Else",
+  "Everything Else": {
     primary: {
       name: "US Bank Altitude Reserve",
-      reward: "2.4% via Apple Pay ✨",
+      reward: "2.4% 🍎💳",
       image: "images/us-bank-altitude-reserve.png",
       applePay: true
     },
     backup: {
       name: "Citi Double Cash",
-      reward: "2% cash back 🔁",
+      reward: "2% 💰",
       image: "images/citi-double-cash.png"
     }
   }
 };
 
-const categoryView = document.getElementById("categoryView");
-const resultView = document.getElementById("resultView");
+const categoriesDiv = document.getElementById("categories");
+const resultDiv = document.getElementById("result");
+const backBtn = document.getElementById("back");
 
-const categoryTitle = document.getElementById("categoryTitle");
-const primaryCardImage = document.getElementById("primaryCardImage");
+const primaryTitle = document.getElementById("primaryTitle");
+const primaryImage = document.getElementById("primaryImage");
 const primaryReward = document.getElementById("primaryReward");
 const applePayBadge = document.getElementById("applePayBadge");
 
 const backupSection = document.getElementById("backupSection");
-const backupCardImage = document.getElementById("backupCardImage");
+const backupImage = document.getElementById("backupImage");
 const backupReward = document.getElementById("backupReward");
 
-document.querySelectorAll("button[data-category]").forEach(button => {
-  button.addEventListener("click", () => {
-    if (navigator.vibrate) navigator.vibrate(10);
+for (const category in data) {
+  const btn = document.createElement("button");
+  btn.textContent = category;
+  btn.onclick = () => {
+    hapticTap();
+    showResult(category);
+  };
+  categoriesDiv.appendChild(btn);
+}
 
-    const data = categories[button.dataset.category];
+function showResult(category) {
+  resultDiv.classList.remove("fade-in");
 
-    categoryTitle.textContent = data.title;
+  categoriesDiv.classList.add("hidden");
+  resultDiv.classList.remove("hidden");
 
-    primaryCardImage.src = data.primary.image;
-    primaryReward.textContent = `${data.primary.name} — ${data.primary.reward}`;
+  const info = data[category];
 
-    applePayBadge.classList.toggle("hidden", !data.primary.applePay);
+  primaryTitle.textContent = info.primary.name;
+  primaryImage.src = info.primary.image;
+  primaryReward.textContent = info.primary.reward;
 
-    if (data.backup) {
-      backupSection.classList.remove("hidden");
-      backupCardImage.src = data.backup.image;
-      backupReward.textContent = `${data.backup.name} — ${data.backup.reward}`;
-    } else {
-      backupSection.classList.add("hidden");
-    }
+  if (info.primary.applePay) {
+    applePayBadge.classList.remove("hidden");
+  } else {
+    applePayBadge.classList.add("hidden");
+  }
 
-    categoryView.classList.add("hidden");
-    resultView.classList.remove("hidden");
+  if (info.backup) {
+    backupSection.classList.remove("hidden");
+    backupImage.src = info.backup.image;
+    backupReward.textContent = info.backup.reward;
+  } else {
+    backupSection.classList.add("hidden");
+  }
+
+  requestAnimationFrame(() => {
+    resultDiv.classList.add("fade-in");
   });
-});
+}
 
-document.getElementById("backButton").addEventListener("click", () => {
-  categoryView.classList.remove("hidden");
-  resultView.classList.add("hidden");
-});
-
-
-
-
+backBtn.onclick = () => {
+  hapticTap();
+  resultDiv.classList.add("hidden");
+  categoriesDiv.classList.remove("hidden");
+};
