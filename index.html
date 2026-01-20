@@ -8,7 +8,7 @@
   />
   <title>Which Card?</title>
 
-  <!-- App Icons (your existing files) -->
+  <!-- App Icons -->
   <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192.png" />
   <link rel="apple-touch-icon" sizes="512x512" href="images/icon-512.png" />
 
@@ -16,11 +16,13 @@
 </head>
 <body>
 
-  <header>
+  <!-- HEADER (home only) -->
+  <header id="homeHeader">
     <h1>Which Card?</h1>
     <p class="subtitle">Tap a category</p>
   </header>
 
+  <!-- CATEGORY VIEW -->
   <main id="categoryView" class="grid">
     <button data-category="restaurants">Restaurants</button>
     <button data-category="grocery">Grocery Stores</button>
@@ -30,17 +32,18 @@
     <button data-category="everything">Everything Else</button>
   </main>
 
+  <!-- RESULT VIEW -->
   <main id="resultView" class="hidden">
     <button id="backButton">← Back</button>
 
     <h2 id="categoryTitle"></h2>
 
     <section class="card-section">
-      <h3>Primary Card</h3>
+      <h3 id="primaryLabel" class="hidden">Primary Card</h3>
+      <p id="primaryCardName" class="card-name"></p>
       <img id="primaryCardImage" alt="Primary Card" />
-      <p id="primaryReward"></p>
+      <p id="primaryReward" class="reward"></p>
 
-      <!-- Apple Pay badge (your existing file) -->
       <img
         id="applePayBadge"
         class="hidden"
@@ -51,11 +54,12 @@
 
     <section class="card-section hidden" id="backupSection">
       <h3>Backup Card</h3>
+      <p id="backupCardName" class="card-name"></p>
       <img id="backupCardImage" alt="Backup Card" />
-      <p id="backupReward"></p>
+      <p id="backupReward" class="reward"></p>
     </section>
   </main>
 
   <script src="app.js"></script>
 </body>
-</html
+</html>
