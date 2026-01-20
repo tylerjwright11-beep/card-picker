@@ -77,24 +77,23 @@ const backupCardName = document.getElementById("backupCardName");
 const backupCardImage = document.getElementById("backupCardImage");
 const backupReward = document.getElementById("backupReward");
 
+// CATEGORY BUTTON HANDLER
 document.querySelectorAll("[data-category]").forEach(button => {
   button.addEventListener("click", () => {
     if (navigator.vibrate) navigator.vibrate(10);
 
     const data = categories[button.dataset.category];
-
     categoryTitle.textContent = data.title;
 
-    // REMOVE existing Apple Pay badge if present
+    // Remove any existing Apple Pay badge
     const existingBadge = document.getElementById("dynamicApplePay");
     if (existingBadge) existingBadge.remove();
 
-    // Primary card
+    // PRIMARY CARD
     primaryCardName.textContent = data.primary.name;
     primaryCardImage.src = data.primary.image;
     primaryReward.textContent = data.primary.reward;
 
-    // Inject Apple Pay badge ONLY if card requires it
     if (data.primary.applePay) {
       const badge = document.createElement("img");
       badge.src = "images/apple-pay-badge.png";
@@ -104,7 +103,7 @@ document.querySelectorAll("[data-category]").forEach(button => {
       primaryCard.insertBefore(badge, primaryCardImage);
     }
 
-    // Backup card
+    // BACKUP CARD
     if (data.backup) {
       backupSection.classList.remove("hidden");
       divider.classList.remove("hidden");
@@ -117,18 +116,20 @@ document.querySelectorAll("[data-category]").forEach(button => {
       divider.classList.add("hidden");
     }
 
+    // HIDE HOME, SHOW RESULT
     homeHeader.classList.add("hidden");
     categoryView.classList.add("hidden");
     resultView.classList.remove("hidden");
   });
 });
 
+// BACK BUTTON HANDLER
 document.getElementById("backButton").addEventListener("click", () => {
   homeHeader.classList.remove("hidden");
   categoryView.classList.remove("hidden");
   resultView.classList.add("hidden");
 
-  // Remove Apple Pay badge on back
+  // Remove Apple Pay badge
   const existingBadge = document.getElementById("dynamicApplePay");
   if (existingBadge) existingBadge.remove();
 
