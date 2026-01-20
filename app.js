@@ -3,7 +3,7 @@ const categories = {
     title: "Restaurants",
     primary: {
       name: "Chase Sapphire Preferred",
-      reward: "3× points 🍽️",
+      reward: "3X Points ⭐️",
       image: "images/chase-sapphire-preferred.png",
       applePay: false
     }
@@ -12,7 +12,7 @@ const categories = {
     title: "Grocery Stores",
     primary: {
       name: "AAA Daily Advantage",
-      reward: "5% cash back 🛒",
+      reward: "5% Cash Back 💰",
       image: "images/aaa-daily-advantage.png",
       applePay: false
     }
@@ -21,7 +21,7 @@ const categories = {
     title: "Wholesale Clubs",
     primary: {
       name: "AAA Daily Advantage",
-      reward: "3% cash back 🏷️",
+      reward: "3% Cash Back 💰",
       image: "images/aaa-daily-advantage.png",
       applePay: false
     }
@@ -30,7 +30,7 @@ const categories = {
     title: "Gas",
     primary: {
       name: "Citi Custom Cash",
-      reward: "5% cash back ⛽️",
+      reward: "5% Cash Back 💰",
       image: "images/citi-custom-cash.png",
       applePay: false
     }
@@ -39,7 +39,7 @@ const categories = {
     title: "Online Shopping",
     primary: {
       name: "Bank of America Cash Rewards",
-      reward: "3% cash back 💻",
+      reward: "3% Cash Back 💰",
       image: "images/bofa-cash-rewards.png",
       applePay: false
     }
@@ -48,13 +48,13 @@ const categories = {
     title: "Everything Else",
     primary: {
       name: "US Bank Altitude Reserve",
-      reward: "2.4% via Apple Pay ✨",
+      reward: "2.4% ⭐️",
       image: "images/us-bank-altitude-reserve.png",
       applePay: true
     },
     backup: {
       name: "Citi Double Cash",
-      reward: "2% cash back 🔁",
+      reward: "2% Cash Back 💰",
       image: "images/citi-double-cash.png"
     }
   }
@@ -102,3 +102,4 @@ document.getElementById("backButton").addEventListener("click", () => {
   categoryView.classList.remove("hidden");
   resultView.classList.add("hidden");
 });
+
