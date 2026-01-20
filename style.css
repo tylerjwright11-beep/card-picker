@@ -8,7 +8,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text",
     Helvetica, Arial, sans-serif;
-  background: #f9f9fb; /* Softer background */
+  background: #f9f9fb;
   color: #1c1c1e;
 }
 
@@ -33,7 +33,7 @@ main {
   padding: 20px;
 }
 
-/* Two-column category grid */
+/* Grid */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -47,10 +47,9 @@ button {
   border-radius: 12px;
   border: none;
   background: #ffffff;
-  color: #007aff; /* Blue text */
+  color: #007aff;
   cursor: pointer;
 
-  /* Micro elevation */
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   transition: transform 0.15s ease, background-color 0.15s ease;
 }
@@ -60,7 +59,7 @@ button:active {
   background: #f2f2f7;
 }
 
-/* Visibility helpers */
+/* Visibility */
 .hidden {
   display: none;
 }
@@ -71,14 +70,19 @@ button:active {
   color: #007aff;
   font-size: 17px;
   padding: 0;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   box-shadow: none;
 }
 
-/* Typography tightening */
+/* Titles */
 h2 {
   font-size: 22px;
-  margin-bottom: 6px;
+  margin-bottom: 20px;
+}
+
+/* Card sections */
+.card-section {
+  text-align: center; /* Center card content */
 }
 
 h3 {
@@ -87,21 +91,26 @@ h3 {
   margin-bottom: 12px;
 }
 
-/* Card sections */
+/* Card name */
+.card-name {
+  font-weight: 600;
+  font-size: 17px;
+  margin-bottom: 8px;
+}
+
+/* Card image */
 .card-section img {
   width: 100%;
   max-width: 320px;
   border-radius: 16px;
   display: block;
-  margin-bottom: 10px;
+  margin: 0 auto 10px;
 
-  /* Subtle card shadow */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
-/* Reward emphasis */
-#primaryReward,
-#backupReward {
+/* Rewards */
+.reward {
   font-size: 16px;
   color: #1c1c1e;
 }
@@ -109,6 +118,7 @@ h3 {
 /* Apple Pay badge */
 #applePayBadge {
   width: 90px;
-  margin-top: 6px;
+  margin: 8px auto 0;
   opacity: 0.85;
+  display: block;
 }
