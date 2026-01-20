@@ -13,12 +13,12 @@ body {
 
 /* HIDDEN CLASS */
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* HOME HEADER */
 #homeHeader {
-  text-align: left; /* left-aligned header */
+  text-align: left;
   margin-bottom: 20px;
 }
 
@@ -53,7 +53,7 @@ body {
   cursor: pointer;
   text-align: center;
   transition: transform 0.12s ease, box-shadow 0.12s ease;
-  width: 100%; /* full width per column */
+  width: 100%;
 }
 
 .category-grid button:active {
