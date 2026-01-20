@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Which Card?</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <h1>Which Card?</h1>
+
+    <div id="categories" class="grid"></div>
+
+    <div id="result" class="hidden">
+      <button id="back">← Back</button>
+
+      <div class="card-section">
+        <h2 id="primaryTitle"></h2>
+        <img id="primaryImage" />
+        <p id="primaryReward"></p>
+      </div>
+
+      <div id="backupSection" class="card-section hidden">
+        <h3>Backup Card</h3>
+        <img id="backupImage" />
+        <p id="backupReward"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
