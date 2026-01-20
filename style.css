@@ -1,118 +1,84 @@
-/* Base Reset */
-* {
-  box-sizing: border-box;
-  -webkit-user-select: none;
-  user-select: none;
-}
-
 body {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #ffffff;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", Helvetica, Arial, sans-serif;
-  background: #f9f9fb; /* Softer background */
-  color: #1c1c1e;
-}
-
-/* Header */
-header {
-  padding: 24px 20px 10px;
+  padding: 20px;
+  color: #000;
 }
 
 h1 {
-  margin: 0;
+  text-align: center;
+  margin-bottom: 20px;
   font-size: 28px;
 }
 
-.subtitle {
-  margin-top: 4px;
-  font-size: 15px;
-  color: #6e6e73;
-}
-
-/* Category View */
-main {
-  padding: 20px;
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
 }
 
 button {
-  width: 100%;
-  padding: 16px;
-  margin-bottom: 12px;
-  font-size: 17px;
-  border-radius: 12px;
+  padding: 18px;
+  font-size: 16px;
+  border-radius: 14px;
   border: none;
-  background: #ffffff;
-  color: #1c1c1e;
-  cursor: pointer;
-
-  /* Micro elevation */
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-  transition: transform 0.15s ease, background-color 0.15s ease;
+  background: #f2f2f7;
+  font-weight: 500;
 }
 
 button:active {
-  transform: scale(0.98);
-  background: #f2f2f7;
+  background: #e5e5ea;
 }
 
-/* Result View */
+#back {
+  margin-bottom: 15px;
+  background: none;
+  color: #007aff;
+  font-size: 16px;
+  padding: 0;
+}
+
 .hidden {
   display: none;
 }
 
-#backButton {
-  background: none;
-  color: #007aff;
-  font-size: 17px;
-  padding: 0;
-  margin-bottom: 20px;
-  box-shadow: none;
-}
-
-/* Typography tightening */
-h2 {
-  font-size: 22px;
-  margin-bottom: 6px;
-}
-
-h3 {
-  font-size: 18px;
-  margin-top: 25px;
-  margin-bottom: 12px;
-}
-
-/* Card Sections */
 .card-section {
-  margin-top: 10px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .card-section img {
-  width: 100%;
+  width: 90%;
   max-width: 320px;
   border-radius: 16px;
-  display: block;
-  margin-bottom: 10px;
-
-  /* Subtle card shadow */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  margin: 10px 0;
 }
 
-/* Rewards emphasis */
 #primaryReward,
 #backupReward {
-  font-size: 16px;
-  color: #1c1c1e;
-}
-
-/* Apple Pay badge */
-#applePayBadge {
-  width: 90px;
+  font-size: 18px;
+  font-weight: 600;
   margin-top: 6px;
-  opacity: 0.85;
 }
 
-/* Reduce motion support */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    transition: none !important;
+#applePayBadge {
+  width: 120px;
+  margin-top: 8px;
+}
+
+/* Subtle animation */
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
