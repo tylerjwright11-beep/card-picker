@@ -65,10 +65,10 @@ const categoryView = document.getElementById("categoryView");
 const resultView = document.getElementById("resultView");
 
 const categoryTitle = document.getElementById("categoryTitle");
+const primaryCard = document.getElementById("primaryCard");
 const primaryCardName = document.getElementById("primaryCardName");
 const primaryCardImage = document.getElementById("primaryCardImage");
 const primaryReward = document.getElementById("primaryReward");
-const applePayBadge = document.getElementById("applePayBadge");
 
 const backupSection = document.getElementById("backupSection");
 const backupCardName = document.getElementById("backupCardName");
@@ -83,26 +83,45 @@ document.querySelectorAll("[data-category]").forEach(button => {
 
     categoryTitle.textContent = data.title;
 
+    // REMOVE existing Apple Pay badge if present
+    const existingBadge = document.getElementById("dynamicApplePay");
+    if (existingBadge) existingBadge.remove();
+
     // Primary card
     primaryCardName.textContent = data.primary.name;
     primaryCardImage.src = data.primary.image;
     primaryReward.textContent = data.primary.reward;
 
-    // Apple Pay badge — reset EVERY time
+    // Inject Apple Pay badge ONLY if card requires it
     if (data.primary.applePay) {
-      applePayBadge.classList.remove("hidden");
-    } else {
-      applePayBadge.classList.add("hidden");
+      const badge = document.createElement("img");
+      badge.src = "images/apple-pay-badge.png";
+      badge.alt = "Apple Pay";
+      badge.className = "apple-pay";
+      badge.id = "dynamicApplePay";
+      primaryCard.insertBefore(badge, primaryCardImage);
     }
 
     // Backup card
     if (data.backup) {
       backupSection.classList.remove("hidden");
+
+      // Insert divider if not present
+      if (!document.querySelector(".divider")) {
+        const divider = document.createElement("div");
+        divider.className = "divider";
+        primaryCard.after(divider);
+      }
+
       backupCardName.textContent = data.backup.name;
       backupCardImage.src = data.backup.image;
       backupReward.textContent = data.backup.reward;
     } else {
       backupSection.classList.add("hidden");
+
+      // Remove divider if exists
+      const divider = document.querySelector(".divider");
+      if (divider) divider.remove();
     }
 
     homeHeader.classList.add("hidden");
@@ -115,4 +134,12 @@ document.getElementById("backButton").addEventListener("click", () => {
   homeHeader.classList.remove("hidden");
   categoryView.classList.remove("hidden");
   resultView.classList.add("hidden");
+
+  // Remove Apple Pay badge on back
+  const existingBadge = document.getElementById("dynamicApplePay");
+  if (existingBadge) existingBadge.remove();
+
+  // Remove divider on back
+  const divider = document.querySelector(".divider");
+  if (divider) divider.remove();
 });
