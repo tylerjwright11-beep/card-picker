@@ -2,54 +2,56 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <title>Which Card?</title>
 
-  <!-- App Icon -->
-  <link rel="apple-touch-icon" href="images/app-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Which Card">
 
-  <!-- Styles -->
+  <link rel="manifest" href="manifest.json" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header>
+  <div id="app">
     <h1>Which Card?</h1>
-    <p class="subtitle">Tap a category</p>
-  </header>
 
-  <main id="categoryView">
-    <button data-category="restaurants">Restaurants</button>
-    <button data-category="grocery">Grocery Stores</button>
-    <button data-category="wholesale">Wholesale Clubs</button>
-    <button data-category="gas">Gas</button>
-    <button data-category="online">Online Shopping</button>
-    <button data-category="everything">Everything Else</button>
-  </main>
+    <div id="categories" class="grid"></div>
 
-  <main id="resultView" class="hidden">
-    <button id="backButton">← Back</button>
+    <div id="result" class="hidden">
+      <button id="back">← Back</button>
 
-    <h2 id="categoryTitle"></h2>
+      <div class="card-section">
+        <h2 id="primaryTitle"></h2>
 
-    <section class="card-section">
-      <h3>Primary Card</h3>
-      <img id="primaryCardImage" alt="Primary Card" />
-      <p id="primaryReward"></p>
-      <img id="applePayBadge" class="hidden" alt="Apple Pay" src="images/apple-pay.png" />
-    </section>
+        <img id="primaryImage" alt="Primary Card" />
 
-    <section class="card-section" id="backupSection">
-      <h3>Backup Card</h3>
-      <img id="backupCardImage" alt="Backup Card" />
-      <p id="backupReward"></p>
-    </section>
-  </main>
+        <p id="primaryReward"></p>
+
+        <!-- Apple Pay badge (shown only for Altitude Reserve) -->
+        <img
+          id="applePayBadge"
+          class="hidden"
+          src="images/apple-pay-badge.png"
+          alt="Apple Pay"
+        />
+      </div>
+
+      <div id="backupSection" class="card-section hidden">
+        <h3>Backup Card</h3>
+        <img id="backupImage" alt="Backup Card" />
+        <p id="backupReward"></p>
+      </div>
+    </div>
+  </div>
 
   <script src="app.js"></script>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </body>
 </html>
-
-
-
-
