@@ -14,18 +14,18 @@ body {
   display: none;
 }
 
-/* HEADER */
-header {
-  text-align: center;
+/* HOME HEADER */
+#homeHeader {
+  text-align: left; /* align left instead of center */
   margin-bottom: 24px;
 }
 
-header h1 {
+#homeHeader h1 {
   font-size: 28px;
   margin: 0;
 }
 
-header p {
+#homeHeader p {
   color: #555;
   margin-top: 6px;
 }
@@ -43,10 +43,11 @@ header p {
   background: #ffffff;
   border-radius: 14px;
   border: none;
-  color: #1a73e8;
+  color: #1a73e8; /* blue text */
   font-weight: 600;
   box-shadow: 0 4px 10px rgba(0,0,0,0.06);
   transition: transform 0.12s ease, box-shadow 0.12s ease;
+  text-align: center; /* ensure button text stays centered */
 }
 
 .category-grid button:active {
@@ -72,7 +73,7 @@ header p {
   font-size: 18px;
   color: #666;
   margin: 4px 0 20px;
-  text-align: left;
+  text-align: left; /* left-align category titles */
 }
 
 /* CARD DISPLAY */
