@@ -37,7 +37,7 @@ const categories = {
   walmart: {
     title: "Walmart",
     primary: {
-      name: "Walmart Pay",
+      name: "Walmart Pay (App)",
       reward: "5% Cash Back 💰",
       image: "images/walmart-pay.jpg",
       applePay: false
