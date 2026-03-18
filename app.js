@@ -26,6 +26,23 @@ const categories = {
       applePay: false
     }
   },
+  target: {
+    title: "Target",
+    primary: {
+      name: "Citi Double Cash",
+      reward: "2% Cash Back 💰",
+      image: "images/citi-double-cash.png"
+    }
+  },
+  walmart: {
+    title: "Walmart",
+    primary: {
+      name: "Walmart Pay",
+      reward: "5% Cash Back 💰",
+      image: "images/walmart-pay.jpg",
+      applePay: false
+    }
+  },
   gas: {
     title: "Gas",
     primary: {
